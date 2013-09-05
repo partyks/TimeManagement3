@@ -29,7 +29,7 @@ public class TestTest {
 
     @org.junit.Test
     public void testMethodShouldReturnTestString() {
-        String string = this.instance.getTest();
+        String string = this.instance.getText();
 
         assertThat(string).isEqualTo("Test String!");
     }
@@ -38,7 +38,7 @@ public class TestTest {
     public void dummyStringShouldCallDummyString () {
         when(dummyStringMock.getString()).thenReturn(MOCK);
 
-        String retString = this.instance.getTest();
+        String retString = this.instance.getText();
 
         assertThat(retString).isEqualTo(MOCK);
     }
