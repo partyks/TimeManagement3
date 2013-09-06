@@ -39,4 +39,7 @@
         </property>
     </bean>
 
+    <bean class="org.timemanagement.dao.taskdao.TaskDAO" id="taskDAO2"/>
+
+
 </beans>

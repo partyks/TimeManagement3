@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                template="/WEB-INF/templates/default.xhtml">
+    <ui:define name="content">
+        <div class="well-small">
+            <h1>New task</h1>
+        </div>
+        <h:form action="#{newTaskController.createNewTask}" styleClass="form-horizontal">
+            <div class="well">
+                1. Short task description<br/>
+                <h:inputText value="#{newTaskController.task.shortDescription}" id="shortDescription" styleClass="span6" />
+                <br/>
+                2. Detailed task description<br/>
+                <h:inputTextarea value="#{newTaskController.task.detailDescription}" rows="10" styleClass="span6"/>
+                <br/>
+                3. Set task importance<br/>
+                <h:selectOneRadio value="#{newTaskController.task.priority}" styleClass="btn-group">
+                    <f:selectItems value="#{taskPriorityData.taskPriorities}"
+                            var="priority" itemLabel="#{priority.description}"/>
+                </h:selectOneRadio>
+
+                <br />
+            </div>
+            <div class="modal-footer">
+                <h:commandButton action="#{newTaskController.createNewTask}" value="Create new Task!" id="createNewTask" styleClass="btn btn-success"/>
+                <h:commandButton action="index" value="Cancel" styleClass="btn btn-danger" data-dismiss="modal"/>
+            </div>
+
+        </h:form>
+    </ui:define>
+</ui:composition>

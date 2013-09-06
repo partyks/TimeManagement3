@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
-                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:h="http://java.sun.com/jsf/html"
                 template="/WEB-INF/templates/default.xhtml">
     <ui:define name="content">
         <div class="hero-unit">
             <h2>JSF2 + Twitter Bootstrap demo</h2>
             <p>This is a template, use it as a starting point to create
                 something more unique.</p>
-            <p>
-                <a href="#"
-                   class="btn btn-primary btn-large">Create new Task!</a>
-            </p>
+            <h:form>
+                <h:commandButton id="createNewTask"
+                                 action="newtaskform" value="Create new Task"
+                                 styleClass="btn btn-primary btn-large" />
+            </h:form>
 
         </div>
     </ui:define>
